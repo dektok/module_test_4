@@ -27,7 +27,7 @@ public class TestSystemUser {
 
     @BeforeEach
     void setUp() {
-        authenticator.begin();
+        authenticator.begin("admin");
     }
 
     @AfterEach
@@ -37,14 +37,12 @@ public class TestSystemUser {
     @Test
     void isAdmin() {
 
-        authenticator. runWithUser("admin",() -> {
-            UserDetails user = currentAuthentication.getUser();
-            String username = user.getUsername();
-            User userObject = userRepository.loadUserByUsername(username);
+        UserDetails user = currentAuthentication.getUser();
+        String username = user.getUsername();
+        User userObject = userRepository.loadUserByUsername(username);
 
-            assertEquals( userObject.getUsername(), username );
+        assertEquals( userObject.getUsername(), username );
 
-        });
     }
 
 }
