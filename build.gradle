@@ -34,12 +34,13 @@ dependencies {
     implementation 'io.jmix.datatools:jmix-datatools-ui-starter'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.projectlombok:lombok:1.18.22'
 
-    runtimeOnly 'org.hsqldb:hsqldb'
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
+    implementation 'org.postgresql:postgresql'
 }
 
 test {
