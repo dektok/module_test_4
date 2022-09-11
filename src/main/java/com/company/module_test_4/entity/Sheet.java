@@ -2,6 +2,7 @@ package com.company.module_test_4.entity;
 
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
 import io.jmix.core.metamodel.annotation.JmixEntity;
+import liquibase.repackaged.net.sf.jsqlparser.statement.select.Fetch;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,7 +21,7 @@ public class Sheet {
 
     @Column(name = "SHEET_NO", nullable = false)
     @NotNull
-    private Integer sheetNo;
+    private Long sheetNo;
 
     @JoinColumn(name = "TEACHER_ID")
     @ManyToOne(fetch = FetchType.LAZY)
@@ -34,11 +35,11 @@ public class Sheet {
         this.teacher = teacher;
     }
 
-    public Integer getSheetNo() {
+    public Long getSheetNo() {
         return sheetNo;
     }
 
-    public void setSheetNo(Integer sheetNo) {
+    public void setSheetNo(Long sheetNo) {
         this.sheetNo = sheetNo;
     }
 
